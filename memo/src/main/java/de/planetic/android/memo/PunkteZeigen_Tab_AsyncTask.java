@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -451,8 +450,6 @@ public class PunkteZeigen_Tab_AsyncTask extends
 				if ((int_zaehler % int_prozent_temp) == 0) {
 
 					publishProgress(PROGRESS_UPDATE, int_zaehler);
-
-					SystemClock.sleep(1000);
 				}
 				int_zaehler++;
 			}
@@ -528,8 +525,6 @@ public class PunkteZeigen_Tab_AsyncTask extends
 	 */
 	@Override
 	protected void onPostExecute(Integer int_result) {
-
-		// TODO !!! auf Intent umstellen
 
 		Intent intent_nachricht = new Intent();
 		intent_nachricht.putExtra("int_anzahl", int_result);
